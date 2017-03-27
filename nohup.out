@@ -1,0 +1,7 @@
+[Error: /home/ashkaushik0007/foodtriangle/node_modules/mongoose/node_modules/mongodb/node_modules/bson/build/Release/bson.node: invalid ELF header]
+js-bson: Failed to load c++ bson extension, using pure JS version
+App listening on port 8080
+[0mGET / [32m200 [0m6.002 ms - 2760[0m
+[0mGET /learn.json [33m404 [0m1.258 ms - 23[0m
+[0mGET /api/todos [32m200 [0m7.453 ms - 2[0m
+[0mGET /favicon.ico [33m404 [0m0.523 ms - 24[0m
