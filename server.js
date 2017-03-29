@@ -1,5 +1,6 @@
 	// set up ========================
 	var express  = require('express');
+    var path = require('path');
 	var app      = express(); 								// create our app w/ express
 	var mongoose = require('mongoose'); 					// mongoose for mongodb
 	var morgan = require('morgan'); 			// log requests to the console (express4)
