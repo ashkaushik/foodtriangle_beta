@@ -14,7 +14,7 @@
 	mongoose.connect('mongodb://' + argv.be_ip + ':80/my_database');
 
     // Set Static Folder
-    app.use(express.static(path.join(__dirname, 'client')));
+    //app.use(express.static(path.join(__dirname, 'client')));
 
     app.use('/js', express.static(__dirname + '/js'));
    	app.use('/bower_components', express.static(__dirname + '/bower_components'));
