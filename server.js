@@ -23,8 +23,14 @@ app.use(express.static(path.join(__dirname, 'client')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/', index);
-app.use('/api', tasks);
+//app.use('/', index);
+//app.use('/api', tasks);
+
+app.get('/',function(req,res){
+  
+    res.sendFile('index.html');
+
+});
 
 server.listen(8080,'10.128.0.3',function(){
     console.log('server started at 10.128.0.3:8080');
