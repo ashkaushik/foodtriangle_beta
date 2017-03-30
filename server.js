@@ -11,12 +11,12 @@ var express = require('express')
 app.get('/',function(req,res){
   
 res.sendFile('index.html');
-
+console.log('hello world');
 });
 
 
 server.listen(8080,'10.128.0.3',function(){
 
-console.log('server started at 10.128.0.3:8080');
-
+  console.log('server started at 10.128.0.3:8080');
+}
 );
