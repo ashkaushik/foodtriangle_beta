@@ -28,5 +28,5 @@ app.use('/api', tasks);
 
 server.listen(8080,'10.128.0.3',function(){
     console.log('server started at 10.128.0.3:8080');
-);
+});
 
