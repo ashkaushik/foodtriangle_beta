@@ -1,11 +1,13 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
+var http = require('http');
+var server = http.createServer(app);
 
 var index = require('./routes/index');
 var tasks = require('./routes/tasks');
 
-var port = 3000;
+var port = 8080;
 
 var app = express();
 
@@ -24,6 +26,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', index);
 app.use('/api', tasks);
 
-app.listen(port, function(){
-    console.log('Server started on port '+port);
-});
+server.listen(8080,'10.128.0.3',function(){
+    console.log('server started at 10.128.0.3:8080');
+);
+

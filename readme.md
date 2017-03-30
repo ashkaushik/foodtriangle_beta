@@ -1,5 +1,6 @@
 This foodtriangle app is based on MVC framework. 
 
+<<<<<<< HEAD
 
 1.curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 
@@ -12,9 +13,6 @@ This foodtriangle app is based on MVC framework.
 5.npm install
 
 6.npm install express --save
-
-
-
 
 
 var express = require('express')
