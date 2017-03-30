@@ -10,7 +10,7 @@ var express = require('express')
 
 app.get('/',function(req,res){
   
-res.sendFile('index.html');
+res.sendfile('index.html');
 console.log('hello world');
 });
 
