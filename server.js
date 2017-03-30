@@ -22,10 +22,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 //Index
-app.get('/',function(req,res){  
-    res.sendfile('index.html');
-    console.log('hello world');
-});
+//app.get('/',function(req,res){  
+  //  res.sendfile('index.html');
+    //console.log('hello world');
+//});
+app.use('/', index);
+app.use('/api', tasks);
 
 //Server Configuration
 server.listen(8080,'10.128.0.3',function(){
