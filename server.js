@@ -13,15 +13,21 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
-app.get('/',function(req,res){
-  
-res.sendfile('index.html');
-console.log('hello world');
+
+// Set Static Folder
+app.use(express.static(path.join(__dirname, 'client')));
+
+// Body Parser MW
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
+//Index
+app.get('/',function(req,res){  
+    res.sendfile('index.html');
+    console.log('hello world');
 });
 
-
+//Server Configuration
 server.listen(8080,'10.128.0.3',function(){
-
   console.log('server started at 10.128.0.3:8080');
-}
-);
+});
