@@ -14,27 +14,11 @@ This foodtriangle app is based on MVC framework.
 
 6.npm install express --save
 
+7.npm install mongojs
 
-var express = require('express')
-  
-, http = require('http')
-  
-, app = express()
-  
-, server = http.createServer(app);
+8.sudo apt-get install mongodb
 
+9.sudo service mongodb stop
 
-
-app.get('/',function(req,res){
-  
-res.sendFile('index.html');
-
-});
-
-
-server.listen(8080,'10.128.0.3',function(){
-
-console.log('server started at 10.128.0.3:8080');
-
-);
+10.sudo mkdir $HOME/db ; sudo mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
 
