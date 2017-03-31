@@ -1,3 +1,4 @@
+//Required variable
 var express = require('express'), 
     http = require('http'),
     app = express(),
@@ -5,6 +6,7 @@ var express = require('express'),
     path = require('path'),
     bodyParser = require('body-parser');
 
+//Routing
 var index = require('./routes/index'),
     tasks = require('./routes/tasks');
 
@@ -12,7 +14,6 @@ var index = require('./routes/index'),
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
-
 
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'client')));
