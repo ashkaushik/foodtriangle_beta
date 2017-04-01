@@ -27,6 +27,6 @@ app.use('/', index);
 app.use('/api', tasks);
 
 //Server Configuration
-server.listen(8080,'10.128.0.3',function(){
-  console.log('server started at 10.128.0.3:8080');
+server.listen(8080,'127.0.0.1',function(){
+  console.log('server started at 127.0.0.1:8080');
 });

@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-//var db = mongojs('mongodb://aashish:aashish@ds011913.mlab.com:11913/mytasklist_aashish',['tasks']);
+var db = mongojs('mongodb://aashish:aashish@ds011913.mlab.com:11913/mytasklist_aashish',['tasks']);
 // the db is on a remote server (the port default to mongo) 
-var db = mongojs('104.154.33.105/mydb', ['mycollection']);
+//var db = mongojs('104.154.33.105/mydb', ['mycollection']);
 
 
 // Get All Tasks
