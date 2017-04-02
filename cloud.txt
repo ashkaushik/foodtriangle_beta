@@ -4,6 +4,7 @@
 4.sudo mkdir $HOME/db ; sudo mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
 5.sudo apt-get update
 6.sudo apt-get install git nodejs npm
-7.git clone -b foodtriangle_node https://github.com/ashkaushik0007/foodtriangle_beta.git
+7.git clone -b foodtriangle https://github.com/ashkaushik0007/foodtriangle_beta.git
 8.cd foodtriangle; npm install
 9.nohup nodejs server.js --be_ip 10.128.0.2 --fe_ip 10.128.0.2 &
+10.db.addUser("foodtriangle_ashkaushik" , "ft@ashkaushik007" , { readOnly : false } )
