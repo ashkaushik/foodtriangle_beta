@@ -1,4 +1,4 @@
-// //Required variable
+//Required variable
 require('rootpath')();
 var express = require('express'), 
     http = require('http'),
@@ -10,7 +10,7 @@ var express = require('express'),
     cors = require('cors');
     config = require('config.json');
 
-// //Routing
+//Routing
   var index = require('./routes/index'),
       tasks = require('./routes/tasks');
       user  = require('./routes/user.js');
