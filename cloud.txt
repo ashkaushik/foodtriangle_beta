@@ -1,0 +1,11 @@
+1.sudo apt-get update
+2.sudo apt-get install mongodb
+3.sudo service mongodb stop
+4.sudo mkdir $HOME/db ; sudo mongod --dbpath $HOME/db --port 80 --fork --logpath /var/tmp/mongodb
+5.sudo apt-get update
+6.curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+7.sudo apt-get install -y nodejs git
+8.git clone -b foodtriangle https://github.com/ashkaushik0007/foodtriangle_beta.git foodtriangle
+9.cd foodtriangle; npm install
+10.nohup nodejs server.js --be_ip 10.128.0.2 --fe_ip 10.128.0.2 &
+11.db.addUser("foodtriangle_ashkaushik" , "ft_ashkaushik007" , { readOnly : false } )
