@@ -34,6 +34,6 @@ app.use('/api', tasks);
 app.use('/users', user);
 
 //Server Configuration
-server.listen(8080,'127.0.0.1',function(){
-  console.log('server started at 127.0.0.1:8080');
+server.listen(8080,'10.128.0.2',function(){
+  console.log('server started at 10.128.0.2:8080');
 });
