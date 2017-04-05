@@ -7,8 +7,9 @@ var express = require('express'),
     path = require('path'),
     bodyParser = require('body-parser'),
     expressJwt = require('express-jwt'),
-    cors = require('cors');
-    config = require('config.json');
+    cors = require('cors'),
+    config = require('config.json'),
+    argv = require('optimist').argv;
 
 //Routing
   var index = require('./routes/index'),
