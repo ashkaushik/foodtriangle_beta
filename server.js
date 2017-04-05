@@ -7,8 +7,9 @@ var express = require('express'),
     path = require('path'),
     bodyParser = require('body-parser'),
     expressJwt = require('express-jwt'),
-    cors = require('cors');
-    config = require('config.json');
+    cors = require('cors'),
+    config = require('config.json'),
+    argv = require('optimist').argv;
 
 //Routing
   var index = require('./routes/index'),
@@ -34,6 +35,6 @@ app.use('/api', tasks);
 app.use('/users', user);
 
 //Server Configuration
-server.listen(8080,'10.128.0.2',function(){
+server.listen(8080,argv.fe_ip,function(){
   console.log('server started at 10.128.0.2:8080');
 });
