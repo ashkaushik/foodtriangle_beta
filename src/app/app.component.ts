@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {TaskService} from './services/index';
+import { User } from './models/index';
+import { UserService } from './services/index';
 
 
 @Component({
@@ -9,4 +11,12 @@ import {TaskService} from './services/index';
   providers:[TaskService],
 })
 
-export class AppComponent { }
+export class AppComponent {
+    currentUser: User;
+    users: User[] = [];
+ 
+    constructor(private userService: UserService) {
+        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    }
+    
+}

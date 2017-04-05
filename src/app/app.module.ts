@@ -7,6 +7,7 @@ import {TasksComponent} from './components/tasks/tasks.component';
 import { routing } from './app.routing';
 import {APP_BASE_HREF} from '@angular/common';
 import { AppConfig } from './app.config';
+import { CommonModule } from '@angular/common';  
 
 
 import { AlertComponent } from './directives/index';
@@ -15,7 +16,7 @@ import { AlertService, AuthenticationService, UserService } from './services/ind
 import { HomeComponent, LoginComponent, RegisterComponent} from './components/index';
 
 @NgModule({
-  imports:      [ BrowserModule, HttpModule, FormsModule, routing],
+  imports:      [ BrowserModule, HttpModule, FormsModule, routing, CommonModule],
   declarations: [AppComponent, 
                  TasksComponent,
                  AlertComponent,
