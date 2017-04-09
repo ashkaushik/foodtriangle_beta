@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 
 import { AlertComponent } from './directives/index';
 import { AuthGuard } from './guards/index';
-import { AlertService, AuthenticationService, UserService } from './services/index';
+import { TaskService, AlertService, AuthenticationService, UserService } from './services/index';
 import { HomeComponent, LoginComponent, RegisterComponent} from './components/index';
 
 @NgModule({
@@ -29,6 +29,7 @@ import { HomeComponent, LoginComponent, RegisterComponent} from './components/in
         AlertService,
         AuthenticationService,
         UserService,
+        TaskService,
         AppConfig,
         {provide: APP_BASE_HREF, useValue : '/' }
     ],
