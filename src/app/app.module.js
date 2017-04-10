@@ -40,6 +40,7 @@ AppModule = __decorate([
             index_3.AlertService,
             index_3.AuthenticationService,
             index_3.UserService,
+            index_3.TaskService,
             app_config_1.AppConfig,
             { provide: common_1.APP_BASE_HREF, useValue: '/' }
         ],
