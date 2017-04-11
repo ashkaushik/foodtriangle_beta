@@ -1,4 +1,4 @@
-<div class="col-md-6 col-md-offset-3">
+<!--<div class="col-md-6 col-md-offset-3">
     <div *ngIf="currentUser">
     <h1>Hi {{currentUser.firstName}}!</h1>
     </div>
@@ -11,4 +11,48 @@
         </li>
     </ul>
     <p><a [routerLink]="['/login']">Logout</a></p>
-</div>
+</div>-->
+
+   
+      <section class="hero-back"><div class="hm-container container">
+            
+      <div class="header ">
+        
+        <a class="navbar-brand" href="#">
+        <img class="hidden-sm hidden-xs" src="../../../../assets/img/logo.png" alt="Logo">
+          </a>
+           <div class="btn-group pull-right" *ngIf="!currentUser">
+            <a [routerLink]="['/login']" class="btn btn-primary">Login</a>
+            <a [routerLink]="['/register']" class="btn btn-primary">Login</a>
+          </div>
+          <div class="btn-group pull-right" *ngIf="currentUser">
+            <p>{{currentUser.firstName}}!</p>
+          </div>
+      </div>
+          
+    <div class="col-md-8 col-md-offset-2 search-form">
+          <h1 align="center"><strong>Order best food Near you!</strong></h1>
+          <form class="form-inline " action="/" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
+              <input class="form-control srch-input" id="mce-EMAIL" name="EMAIL" placeholder="What you like to Eat" type="email">
+              <span class="input-group-btn pull-right">
+              <button class="btn btn-large btn-search" type="button">
+                  <i class="fa fa-search " aria-hidden="true"></i>
+                  
+                  </button>
+              </span>
+             
+              
+            </form>
+          </div>      
+            <div class="more"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+      </div>
+      </section>
+      <footer class="footer clearfix ">
+       
+         
+            <div class=" text-center " >
+                Made with <i class="fa fa-heart"></i> Foodtraingle
+            
+            
+      </div>
+    </footer>
