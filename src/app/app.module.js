@@ -20,6 +20,8 @@ var index_1 = require("./directives/index");
 var index_2 = require("./guards/index");
 var index_3 = require("./services/index");
 var index_4 = require("./components/index");
+var core_2 = require("@angular/core");
+core_2.enableProdMode();
 var AppModule = (function () {
     function AppModule() {
     }
