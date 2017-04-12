@@ -28,7 +28,7 @@ function authenticate(username, password) {
             // authentication successful
             deferred.resolve({
                 _id: user._id,
-                username: user.username,
+                email: user.email,
                 firstName: user.firstName,
                 lastName: user.lastName,
                 token: jwt.sign({ sub: user._id }, config.secret)
@@ -82,13 +82,13 @@ function create(userParam) {
  
     // validation
     db.users.findOne(
-        { username: userParam.username },
+        { username: userParam.email },
         function (err, user) {
             if (err) deferred.reject(err.name + ': ' + err.message);
  
             if (user) {
                 // username already exists
-                deferred.reject('Username "' + userParam.username + '" is already taken');
+                deferred.reject('Email "' + userParam.email + '" is already taken');
             } else {
                 createUser();
             }
@@ -120,16 +120,16 @@ function update(_id, userParam) {
     db.users.findById(_id, function (err, user) {
         if (err) deferred.reject(err.name + ': ' + err.message);
  
-        if (user.username !== userParam.username) {
+        if (user.email !== userParam.email) {
             // username has changed so check if the new username is already taken
             db.users.findOne(
-                { username: userParam.username },
+                { email: userParam.email },
                 function (err, user) {
                     if (err) deferred.reject(err.name + ': ' + err.message);
  
                     if (user) {
                         // username already exists
-                        deferred.reject('Username "' + req.body.username + '" is already taken')
+                        deferred.reject('Email "' + req.body.email + '" is already taken')
                     } else {
                         updateUser();
                     }
