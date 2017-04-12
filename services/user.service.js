@@ -18,10 +18,10 @@ service.delete = _delete;
  
 module.exports = service;
  
-function authenticate(username, password) {
+function authenticate(email, password) {
     var deferred = Q.defer();
  
-    db.users.findOne({ username: username }, function (err, user) {
+    db.users.findOne({ email: email }, function (err, user) {
         if (err) deferred.reject(err.name + ': ' + err.message);
  
         if (user && bcrypt.compareSync(password, user.hash)) {
@@ -82,12 +82,12 @@ function create(userParam) {
  
     // validation
     db.users.findOne(
-        { username: userParam.email },
+        { email: userParam.email },
         function (err, user) {
             if (err) deferred.reject(err.name + ': ' + err.message);
  
             if (user) {
-                // username already exists
+                // email already exists
                 deferred.reject('Email "' + userParam.email + '" is already taken');
             } else {
                 createUser();
@@ -121,14 +121,14 @@ function update(_id, userParam) {
         if (err) deferred.reject(err.name + ': ' + err.message);
  
         if (user.email !== userParam.email) {
-            // username has changed so check if the new username is already taken
+            // email has changed so check if the new email is already taken
             db.users.findOne(
                 { email: userParam.email },
                 function (err, user) {
                     if (err) deferred.reject(err.name + ': ' + err.message);
  
                     if (user) {
-                        // username already exists
+                        // email already exists
                         deferred.reject('Email "' + req.body.email + '" is already taken')
                     } else {
                         updateUser();
@@ -144,7 +144,7 @@ function update(_id, userParam) {
         var set = {
             firstName: userParam.firstName,
             lastName: userParam.lastName,
-            username: userParam.username,
+            email: userParam.email,
         };
  
         // update password if it was entered
