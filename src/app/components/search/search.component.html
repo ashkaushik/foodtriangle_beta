@@ -1,1 +1,82 @@
-<h1>Search Results</h1>
+<section class="hero-ban">
+    <div class="container">
+        <div class="row">
+            <div class="nav-left col-xs-2 col-sm-2">
+                <a [routerLink]="['/']">
+                    <img class="logo" src="../../../assets/img/logo_white.png" alt="Foodtraingle">
+                </a>
+            </div>
+
+            <nav class="nav">
+                <div class="btn-group pull-right mar-top" *ngIf="!currentUser">
+                    <a [routerLink]="['/login']" class="btn btn-primary">Login</a>
+                    <a [routerLink]="['/register']" class="btn btn-primary">Sign Up</a>
+                </div>
+            </nav>
+            <nav class="nav">
+                <div class="btn-group pull-right mar-top" *ngIf="currentUser">
+                    <button type="button" class="btn btn-primary">{{currentUser.firstName}}!</button>
+                    <a [routerLink]="['/login']" class="btn btn-primary">Logout</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+            <h1 class="title">
+                Lorem Ipsum has been the<br> text ever since the 1500s<br> printer took a galley
+            </h1>
+        </div>
+
+        <nav>
+            <ul class="nav nav-pills srch-menu">
+                <li class="">
+                    <a class="nav-link " href="#">Order Online <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="">
+                    <a class="nav-link active" href="#">Find Receipe</a>
+                </li>
+                <li class="">
+                    <a class="nav-link " href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+<section class="inner_content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div *ngFor="let user of users">
+                    <div class="card fl">
+                        <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" src="../../../assets/img/pro1.jpg" data-holder-rendered="true">
+                        <div class="card-img-trans">
+                            <div class="card-price-grn">
+                                Rs.120.00
+                            </div>
+                        </div>
+                        <div class="icon-row">
+                            <div class="icon-heart">
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                            </div>
+                            <div class="icon-cart">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            </div>
+                            <div class="icon-more">
+                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="card-block">
+                            <h4 class="card-title">Paneer Makhan Masala </h4>
+                            <p class="card-text">Cottage cheese cooked in thick makhani gravy with Indian spices</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 srch-right">
+                Right Hand side
+            </div>
+        </div>
+    </div>
+</section>
