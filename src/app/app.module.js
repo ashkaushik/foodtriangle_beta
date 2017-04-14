@@ -19,6 +19,7 @@ var common_2 = require("@angular/common");
 var index_1 = require("./directives/index");
 var index_2 = require("./guards/index");
 var index_3 = require("./services/index");
+// import { HomeComponent, LoginComponent, RegisterComponent, DashboardComponent} from './components/index';
 var index_4 = require("./components/index");
 var core_2 = require("@angular/core");
 core_2.enableProdMode();
@@ -35,8 +36,7 @@ AppModule = __decorate([
             index_1.AlertComponent,
             index_4.HomeComponent,
             index_4.LoginComponent,
-            index_4.RegisterComponent,
-            index_4.DashboardComponent
+            index_4.RegisterComponent
         ],
         providers: [
             index_2.AuthGuard,
