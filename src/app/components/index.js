@@ -6,4 +6,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./home/home.component"));
 __export(require("./login/login.component"));
 __export(require("./register/register.component"));
+__export(require("./dashboard/dashboard.component"));
 //# sourceMappingURL=index.js.map
