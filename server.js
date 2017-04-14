@@ -39,6 +39,6 @@ app.get('*', (req, res) => {
 });
 
 //Server Configuration
-server.listen(8080,'localhost',function(){
+server.listen(8080,'10.128.0.2',function(){
   console.log('server started at 10.128.0.2:8080');
 });
