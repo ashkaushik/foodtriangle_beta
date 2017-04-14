@@ -7,5 +7,5 @@ __export(require("./home/home.component"));
 __export(require("./login/login.component"));
 __export(require("./register/register.component"));
 __export(require("./search/search.component"));
-// export * from './dashboard/dashboard.component'; 
+__export(require("./dash/dash.component"));
 //# sourceMappingURL=index.js.map

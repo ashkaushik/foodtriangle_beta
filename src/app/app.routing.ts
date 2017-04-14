@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 // import { HomeComponent, LoginComponent, RegisterComponent, DashboardComponent } from './components/index';
 
-import { HomeComponent, LoginComponent, RegisterComponent, SearchComponent} from './components/index';
+import { HomeComponent, LoginComponent, RegisterComponent, SearchComponent, DashComponent} from './components/index';
 import { AuthGuard } from './guards/index';
 
 const appRoutes: Routes = [
@@ -11,6 +11,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'search', component: SearchComponent },
+    { path: 'dashboard', component: DashComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
