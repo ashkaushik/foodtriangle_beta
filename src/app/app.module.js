@@ -37,7 +37,7 @@ AppModule = __decorate([
             index_4.HomeComponent,
             index_4.LoginComponent,
             index_4.RegisterComponent,
-            index_4.DashboardComponent
+            index_4.SearchComponent
         ],
         providers: [
             index_2.AuthGuard,

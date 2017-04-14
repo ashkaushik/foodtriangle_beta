@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  templateUrl: 'dashboard.component.html',
+  templateUrl: 'search.component.html',
 })
 
-export class DashboardComponent { }
+export class SearchComponent { }
