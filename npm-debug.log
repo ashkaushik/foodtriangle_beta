@@ -10,7 +10,7 @@
 6 silly lifecycle foodtriangle@1.0.0~prebuild: no script for prebuild, continuing
 7 info lifecycle foodtriangle@1.0.0~build: foodtriangle@1.0.0
 8 verbose lifecycle foodtriangle@1.0.0~build: unsafe-perm in lifecycle true
-9 verbose lifecycle foodtriangle@1.0.0~build: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\foodtriangle\node_modules\.bin;C:\Users\Aashish Kaushik\bin;C:\Program Files\Git\mingw32\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw32\bin;C:\Program Files\Git\usr\bin;C:\Users\Aashish Kaushik\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Java\jre7\bin;C:\Program Files\Brackets\command;C:\Program Files\PuTTY;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\Skype\Phone;C:\Users\Aashish Kaushik\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+9 verbose lifecycle foodtriangle@1.0.0~build: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\foodtriangle\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Java\jre7\bin;C:\Program Files\Brackets\command;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Skype\Phone\;C:\Users\Aashish Kaushik\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin
 10 verbose lifecycle foodtriangle@1.0.0~build: CWD: C:\foodtriangle
 11 silly lifecycle foodtriangle@1.0.0~build: Args: [ '/d /s /c', 'tsc -p src/' ]
 12 silly lifecycle foodtriangle@1.0.0~build: Returned: code: 2  signal: null
