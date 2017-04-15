@@ -52,7 +52,7 @@ ul.srch-menu li a.active{ background-color: #fff !important; color:#cd2f3a !impo
 .fr{ float: right;}
 .srch-right{ background: #fff; border-radius: 4px; border: 1px solid rgba(0, 0, 0, 0.125); top: -100px; padding: 15px; height:500px;}
 .mar-top{ margin-top: 15px;}
-.login-area{ background:#fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13); padding:0px 24px 46px; margin-top:8%;}
+.login-area{ background:#fff; box-shadow:1px 2px 5px 0 rgba(0, 0, 0, 0.55); padding:0px 24px 46px; margin-top:8%;}
 .btn-group-lg > .btn, .btn-lg{ border-radius:4px;padding:11px 16px;}
 
 
