@@ -8,4 +8,5 @@ __export(require("./login/login.component"));
 __export(require("./register/register.component"));
 __export(require("./search/search.component"));
 __export(require("./dash/dash.component"));
+__export(require("./dash/menu/menu.component"));
 //# sourceMappingURL=index.js.map

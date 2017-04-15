@@ -37,7 +37,8 @@ AppModule = __decorate([
             index_4.LoginComponent,
             index_4.RegisterComponent,
             index_4.SearchComponent,
-            index_4.DashComponent
+            index_4.DashComponent,
+            index_4.MenuComponent
         ],
         providers: [
             index_2.AuthGuard,
@@ -45,6 +46,7 @@ AppModule = __decorate([
             index_3.AuthenticationService,
             index_3.UserService,
             index_3.TaskService,
+            index_3.MenuService,
             app_config_1.AppConfig,
             { provide: common_1.APP_BASE_HREF, useValue: '/' }
         ],

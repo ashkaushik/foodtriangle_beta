@@ -12,8 +12,8 @@ import { CommonModule } from '@angular/common';
 
 import { AlertComponent } from './directives/index';
 import { AuthGuard } from './guards/index';
-import { TaskService, AlertService, AuthenticationService, UserService } from './services/index';
-import { HomeComponent, LoginComponent, RegisterComponent, SearchComponent, DashComponent} from './components/index';
+import { TaskService, AlertService, AuthenticationService, UserService, MenuService } from './services/index';
+import { HomeComponent, LoginComponent, RegisterComponent, SearchComponent, DashComponent, MenuComponent} from './components/index';
 import {enableProdMode} from '@angular/core';
 
 enableProdMode();
@@ -26,7 +26,8 @@ enableProdMode();
                  LoginComponent,
                  RegisterComponent,
                  SearchComponent,
-                 DashComponent
+                 DashComponent,
+                 MenuComponent
   ],
   providers: [
         AuthGuard,
@@ -34,6 +35,7 @@ enableProdMode();
         AuthenticationService,
         UserService,
         TaskService,
+        MenuService,
         AppConfig,
         {provide: APP_BASE_HREF, useValue : '/' }
     ],

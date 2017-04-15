@@ -7,11 +7,22 @@ export class User {
     username: String;
     emailVerified:boolean;
     phoneVerified:boolean;
-    Role: { 
-            Name:String;
-            InvitedBy:string;
-            Email:String;
+    role: { 
+            name:String;
+            invitedBy:string;
+            email:String;
           }
+    address:{
+            address1:string;
+            address2:string;
+            address3:string;
+            city:string;
+            state:string;
+            country:string;
+            postCode:string;
+            category:string;    
+          }
+    defaultaddress:boolean;
     active:boolean;
     phone: number;
     created: Date;
