@@ -13,7 +13,7 @@ a{ color: #cd2f3b;}
 .btn-search{ padding:19px 20px; cursor: pointer;background: #ededed ;}
 .navbar-brand img{ width: 80%}
 .form-control{ background: #ededed ; border: 0; padding:13px 20px; height: auto;}
-.form-control:focus{ background: #ededed ; border: 0; padding:13px 20px;}
+.form-control:focus{ background: #ededed;padding:13px 20px;}
 
 
 .srch-input{width:99% !important; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.075) inset; padding:8% 0 0 0;}
