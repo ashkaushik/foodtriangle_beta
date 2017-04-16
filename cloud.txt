@@ -12,3 +12,57 @@
 
 gitignore//to untrack file
 git update-index --assume-unchanged files_source
+
+
+webpack (npm install --global webpack)
+webpack-dev-server (npm install --global webpack-dev-server)
+karma (npm install --global karma-cli)
+protractor (npm install --global protractor)
+typings (npm install --global typings)
+typescript (npm install --global typescript)
+
+
+npm install to install all dependencies
+typings install to install necessary typings
+npm run server to start the dev server in another tab
+
+
+server
+# development
+npm run server
+# production
+npm run build:prod
+npm run server:prod
+
+
+build files
+# development
+npm run build:dev
+# production
+npm run build:prod
+
+watch and build files
+npm run watch
+run tests
+npm run test
+
+
+run tests
+npm run test
+
+watch and run our tests
+npm run watch:test
+
+run end-to-end tests
+# make sure you have your server running in another terminal
+npm run e2e
+
+run webdriver (for end-to-end)
+npm run webdriver:update
+npm run webdriver:start
+
+run Protractor's elementExplorer (for end-to-end)
+npm run webdriver:start
+# in another terminal
+npm run e2e:live
+
