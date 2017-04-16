@@ -23,7 +23,8 @@ export class MenuComponent {
         this.menuService.add(this.model)
             .subscribe(
             data => {
-                this.alertService.success('Item added successful', true);
+                this.loading = false;
+                this.alertService.success('Item added successful', true);                
                 this.router.navigate(['/dashboard']);
             },
             error => {

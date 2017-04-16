@@ -11,14 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var index_1 = require("../../services/index");
+var index_2 = require("../../services/index");
 var SearchComponent = (function () {
-    function SearchComponent(userService) {
+    function SearchComponent(menuService, userService) {
+        this.menuService = menuService;
         this.userService = userService;
         this.users = [];
-        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        this.items = [];
+        this.loading = true;
+        // this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.loadAllUsers();
+        this.loadsearchItems();
     };
     SearchComponent.prototype.deleteUser = function (_id) {
         var _this = this;
@@ -27,6 +32,11 @@ var SearchComponent = (function () {
     SearchComponent.prototype.loadAllUsers = function () {
         var _this = this;
         this.userService.getAll().subscribe(function (users) { _this.users = users; });
+        this.loading = false;
+    };
+    SearchComponent.prototype.loadsearchItems = function () {
+        var _this = this;
+        this.menuService.getAll().subscribe(function (items) { _this.items = items; });
     };
     return SearchComponent;
 }());
@@ -35,7 +45,7 @@ SearchComponent = __decorate([
         moduleId: module.id,
         templateUrl: 'search.component.html',
     }),
-    __metadata("design:paramtypes", [index_1.UserService])
+    __metadata("design:paramtypes", [index_2.MenuService, index_1.UserService])
 ], SearchComponent);
 exports.SearchComponent = SearchComponent;
 //# sourceMappingURL=search.component.js.map

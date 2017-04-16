@@ -4,7 +4,6 @@ var router = express.Router();
 var menuService = require('services/menu.service');
  
 // routes
-router.post('/authenticate', authenticate);
 router.post('/addItem', addItem);
 router.get('/getAllitems', getAll);
 router.get('/current', getCurrent);
@@ -12,22 +11,6 @@ router.put('/updateItem:_id', update);
 router.delete('deleteItem/:_id', _delete);
  
 module.exports = router;
- 
-function authenticate(req, res) {
-    menuService.authenticate(req.body.email, req.body.password)
-        .then(function (user) {
-            if (user) {
-                // authentication successful
-                res.send(user);
-            } else {
-                // authentication failed
-                res.status(401).send('email or password is incorrect');
-            }
-        })
-        .catch(function (err) {
-            res.status(400).send(err);
-        });
-}
  
 function addItem(req, res) {
     menuService.add(req.body)

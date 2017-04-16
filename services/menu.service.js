@@ -9,7 +9,6 @@ db.bind('menus');
  
 var service = {};
  
-// service.authenticate = authenticate;
 service.getAll = getAll;
 service.getById = getById;
 service.add = add;
@@ -17,30 +16,6 @@ service.update = update;
 service.delete = _delete;
  
 module.exports = service;
- 
-// function authenticate(email, password) {
-//     var deferred = Q.defer();
- 
-//     db.menus.findOne({ email: email }, function (err, menu) {
-//         if (err) deferred.reject(err.name + ': ' + err.message);
- 
-//         if (menu && bcrypt.compareSync(password, menu.hash)) {
-//             // authentication successful
-//             deferred.resolve({
-//                 _id: menu._id,
-//                 email: menu.email,
-//                 firstName: menu.firstName,
-//                 lastName: menu.lastName,
-//                 token: jwt.sign({ sub: menu._id }, config.secret)
-//             });
-//         } else {
-//             // authentication failed
-//             deferred.resolve();
-//         }
-//     });
- 
-//     return deferred.promise;
-// }
  
 function getAll() {
     var deferred = Q.defer();
@@ -96,20 +71,14 @@ function add(menuParam) {
     addItem();
  
     function addItem() {
-        // set menu object to menuParam without the cleartext password
-       // var menu = _.omit(menuParam, 'password');
- 
-        // add hashed password to menu object
-        //menu.hash = bcrypt.hashSync(menuParam.password, 10);
- 
+        var menu = menuParam;
         db.menus.insert(
             menu,
             function (err, doc) {
                 if (err) deferred.reject(err.name + ': ' + err.message); 
                 deferred.resolve();
             });
-    }
- 
+    } 
     return deferred.promise;
 }
  

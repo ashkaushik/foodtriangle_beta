@@ -25,6 +25,7 @@ var MenuComponent = (function () {
         this.loading = true;
         this.menuService.add(this.model)
             .subscribe(function (data) {
+            _this.loading = false;
             _this.alertService.success('Item added successful', true);
             _this.router.navigate(['/dashboard']);
         }, function (error) {
