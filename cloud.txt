@@ -9,3 +9,6 @@
 9.cd foodtriangle; npm install
 10.nohup nodejs server.js --be_ip 10.128.0.2 --fe_ip 10.128.0.2 &
 11.db.addUser("foodtriangle_ashkaushik" , "ft_ashkaushik007" , { readOnly : false } )
+
+gitignore//to untrack file
+git update-index --assume-unchanged files_source
