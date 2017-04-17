@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
     currentUser: User;
     users: User[] = [];
     items: Menu[] = [];
-    loading = true;
+    loading = false;
 
     constructor(private menuService:MenuService,private userService:UserService) {
        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -31,10 +31,11 @@ export class SearchComponent implements OnInit {
 
     private loadAllUsers() {
         this.userService.getAll().subscribe(users => { this.users = users; });
-        this.loading = false;
     }
 
     private loadsearchItems() {
-        this.menuService.getAll().subscribe(items => { this.items = items; });
+        this.loading = true;
+        this.menuService.getAll().subscribe(items => { this.items = items; });    
+        this.loading = false;    
     }
 }

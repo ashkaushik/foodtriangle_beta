@@ -18,8 +18,8 @@ var SearchComponent = (function () {
         this.userService = userService;
         this.users = [];
         this.items = [];
-        this.loading = true;
-        // this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        this.loading = false;
+        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.loadAllUsers();
@@ -32,11 +32,12 @@ var SearchComponent = (function () {
     SearchComponent.prototype.loadAllUsers = function () {
         var _this = this;
         this.userService.getAll().subscribe(function (users) { _this.users = users; });
-        this.loading = false;
     };
     SearchComponent.prototype.loadsearchItems = function () {
         var _this = this;
+        this.loading = true;
         this.menuService.getAll().subscribe(function (items) { _this.items = items; });
+        this.loading = false;
     };
     return SearchComponent;
 }());
