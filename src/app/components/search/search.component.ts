@@ -35,7 +35,6 @@ export class SearchComponent implements OnInit {
 
     private loadsearchItems() {
         this.loading = true;
-        this.menuService.getAll().subscribe(items => { this.items = items; });    
-        this.loading = false;    
+        this.menuService.getAll().subscribe(items => { this.items = items; this.loading = false; }); 
     }
 }

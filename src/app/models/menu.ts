@@ -1,4 +1,4 @@
-export class Menu {
+export interface Menu {
     _id: string;        
     name: string;
     restaurant_id: string;
@@ -7,24 +7,24 @@ export class Menu {
     longDesc:string;
     shortDesc:string;
     lat:string;
-    lang:string;
+    long:string;
     type:string;
-    category:string;
-    image:{
-            mainImage:string;
-            image1:string;
-            image2:string;
-            image3:string;
-            image4:string;
-            image5:string;
+    category:string;    
+    image?: {
+            mainImage?:string;
+            image1?:string;
+            image2?:string;
+            image3?:string;
+            image4?:string;
+            image5?:string;
           }
-    rating: { 
-            userName:String;
-            userEmail:string;
+    rating?: { 
+            userName?:String;
+            userEmail?:string;
           }
-    likes: { 
-            userName:String;
-            userEmail:string;
+    likes?: { 
+            userName?:String;
+            userEmail?:string;
           }
     published:boolean;
     created: Date;

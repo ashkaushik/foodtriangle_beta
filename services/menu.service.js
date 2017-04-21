@@ -71,13 +71,14 @@ function add(menuParam) {
     addItem();
  
     function addItem() {
-        var menu = menuParam;
-        db.menus.insert(
-            menu,
-            function (err, doc) {
-                if (err) deferred.reject(err.name + ': ' + err.message); 
-                deferred.resolve();
-            });
+        // var menu = menuParam;
+        // db.menus.insert(
+        //     menu,
+        //     function (err, doc) {
+        //         if (err) deferred.reject(err.name + ': ' + err.message); 
+        //         deferred.resolve();
+        //     });
+        console.log(menuParam);
     } 
     return deferred.promise;
 }

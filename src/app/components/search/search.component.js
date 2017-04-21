@@ -36,8 +36,7 @@ var SearchComponent = (function () {
     SearchComponent.prototype.loadsearchItems = function () {
         var _this = this;
         this.loading = true;
-        this.menuService.getAll().subscribe(function (items) { _this.items = items; });
-        this.loading = false;
+        this.menuService.getAll().subscribe(function (items) { _this.items = items; _this.loading = false; });
     };
     return SearchComponent;
 }());

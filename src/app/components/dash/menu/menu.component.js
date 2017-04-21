@@ -11,27 +11,62 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var forms_1 = require("@angular/forms");
 var index_1 = require("../../../services/index");
 var MenuComponent = (function () {
-    function MenuComponent(router, menuService, alertService) {
+    function MenuComponent(_fb, router, menuService, alertService) {
+        this._fb = _fb;
         this.router = router;
         this.menuService = menuService;
         this.alertService = alertService;
-        this.model = {};
+        this.events = []; // use later to display form changes
         this.loading = false;
+        this.model = {};
     }
-    MenuComponent.prototype.add = function () {
-        var _this = this;
-        this.loading = true;
-        this.menuService.add(this.model)
-            .subscribe(function (data) {
-            _this.loading = false;
-            _this.alertService.success('Item added successful', true);
-            _this.router.navigate(['/dashboard']);
-        }, function (error) {
-            _this.alertService.error(error._body);
-            _this.loading = false;
+    MenuComponent.prototype.ngOnInit = function () {
+        // the short way
+        this.menuForm = this._fb.group({
+            name: ['', [forms_1.Validators.required, forms_1.Validators.minLength(3)]],
+            restid: ['', forms_1.Validators.required],
+            fullprice: ['', forms_1.Validators.required],
+            halfprice: [''],
+            longDesc: [''],
+            shortDesc: [''],
+            lat: ['', forms_1.Validators.required],
+            long: ['', forms_1.Validators.required],
+            type: ['', forms_1.Validators.required],
+            category: ['', forms_1.Validators.required],
+            created: [Date.now(), forms_1.Validators.required],
+            updated: [Date.now(), forms_1.Validators.required],
         });
+        // subscribe to form changes  
+        // this.subcribeToFormChanges();
+        // Update single value
+        //(<FormControl>this.myForm.controls['name'])
+        // .setValue('John', { onlySelf: true });
+    };
+    // subcribeToFormChanges() {
+    //     const myFormStatusChanges$ = this.myForm.statusChanges;
+    //     const myFormValueChanges$ = this.myForm.valueChanges;
+    //     myFormStatusChanges$.subscribe(x => this.events.push({ event: 'STATUS_CHANGED', object: x }));
+    //     myFormValueChanges$.subscribe(x => this.events.push({ event: 'VALUE_CHANGED', object: x }));
+    // }
+    MenuComponent.prototype.add = function (model, isValid) {
+        var _this = this;
+        this.submitted = true;
+        if (isValid) {
+            console.log(model);
+            this.loading = true;
+            this.menuService.add(model)
+                .subscribe(function (data) {
+                _this.loading = false;
+                _this.alertService.success('Item added successful', true);
+                _this.router.navigate(['/dashboard']);
+            }, function (error) {
+                _this.alertService.error(error._body);
+                _this.loading = false;
+            });
+        }
     };
     return MenuComponent;
 }());
@@ -41,7 +76,8 @@ MenuComponent = __decorate([
         selector: 'menu',
         templateUrl: 'menu.component.html'
     }),
-    __metadata("design:paramtypes", [router_1.Router,
+    __metadata("design:paramtypes", [forms_1.FormBuilder,
+        router_1.Router,
         index_1.MenuService,
         index_1.AlertService])
 ], MenuComponent);

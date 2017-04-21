@@ -10,6 +10,7 @@ var appRoutes = [
     { path: 'register', component: index_1.RegisterComponent },
     { path: 'search', component: index_1.SearchComponent },
     { path: 'dashboard', component: index_1.DashComponent },
+    { path: 'additem', component: index_1.MenuComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
