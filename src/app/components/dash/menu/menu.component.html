@@ -95,13 +95,11 @@
             <div *ngIf="!menuForm.controls.category.valid  && submitted" class="help-block">Category is required.</div>
         </div>
         <div class="form-group">
-            <label for="">Created*</label>
-            <input type="text" class="form-control" formControlName="created">   
+            <input type="hidden" class="form-control" formControlName="created">   
             <div *ngIf="!menuForm.controls.created.valid  && submitted" class="help-block">Created is required.</div>
         </div>
         <div class="form-group">
-            <label for="">Updated*</label>
-            <input type="text" class="form-control" formControlName="updated">   
+            <input type="hidden" class="form-control" formControlName="updated">   
             <div *ngIf="!menuForm.controls.updated.valid  && submitted" class="help-block">Updated is required.</div>
         </div>
 

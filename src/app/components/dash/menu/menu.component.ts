@@ -67,7 +67,6 @@ export class MenuComponent implements OnInit {
     add(model: Menu, isValid: boolean) {
         this.submitted = true;
         if (isValid) {
-            console.log(model);
             this.loading = true;
             this.menuService.add(model)
                 .subscribe(

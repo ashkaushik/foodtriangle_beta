@@ -55,7 +55,6 @@ var MenuComponent = (function () {
         var _this = this;
         this.submitted = true;
         if (isValid) {
-            console.log(model);
             this.loading = true;
             this.menuService.add(model)
                 .subscribe(function (data) {
