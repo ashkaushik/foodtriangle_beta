@@ -24,9 +24,9 @@
                 <a [routerLink]="['/login']" class="btn btn-primary">Login</a>
                 <a [routerLink]="['/register']" class="btn btn-primary">Register</a>
             </div>
-            <div class="btn-group pull-right" *ngIf="currentUser.role=='foodie'">
-                <p>{{currentUser.firstName}}!</p>
-                <a [routerLink]="['/login']" class="btn btn-primary">Logout</a>
+            <div class="btn-group pull-right" *ngIf="currentUser">
+                    <p>{{currentUser.firstName}}!</p>
+                    <a [routerLink]="['/login']" class="btn btn-primary">Logout</a>
             </div>
         </div>
 
