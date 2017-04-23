@@ -1,0 +1,52 @@
+<!--<div class="col-md-6 col-md-offset-3">
+    <div *ngIf="currentUser">
+    <h1>Hi {{currentUser.firstName}}!</h1>
+    </div>
+    <p>You're logged in with the MEAN Stack & Angular 2!!</p>
+    <h3>All registered users:</h3>
+    <ul>
+        <li *ngFor="let user of users">
+            {{user.username}} ({{user.firstName}} {{user.lastName}})
+            - <a (click)="deleteUser(user._id)">Delete</a>
+        </li>
+    </ul>
+    <p><a [routerLink]="['/login']">Logout</a></p>
+</div>-->
+
+
+<section class="hero-back">
+    <div class="hm-container container">
+        <div class="header ">
+            <a class="navbar-brand" [routerLink]="['/']">
+                <img src="../../../assets/img/logo.png" alt="Logo">
+            </a>
+            <div class="btn-group pull-right" *ngIf="!currentUser">
+                <a [routerLink]="['/login']" class="btn btn-primary">Login</a>
+                <a [routerLink]="['/register']" class="btn btn-primary">Register</a>
+            </div>
+            <div class="btn-group pull-right" *ngIf="currentUser">
+                    <p>{{currentUser.firstName}}!</p>
+                    <a [routerLink]="['/login']" class="btn btn-primary">Logout</a>
+            </div>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2 search-form">
+            <h1 align="center"><strong>Order best food Near you!</strong></h1>
+            <form class="form-inline " action="/" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank"
+                novalidate="">
+             <input class="form-control srch-input" id="mce-EMAIL" name="EMAIL" placeholder="What you like to Eat" type="email">
+              <span class="input-group-btn pull-right">
+                <a [routerLink]="['/search']" class="btn btn-large btn-search">
+                    <i class="fa fa-search " aria-hidden="true"></i>                  
+                </a>
+              </span>
+            </form>
+        </div>
+        <div class="more"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+    </div>
+</section>
+<footer class="footer clearfix ">
+    <div class=" text-center ">
+        Made with <i class="fa fa-heart"></i> Foodtraingle
+    </div>
+</footer>
