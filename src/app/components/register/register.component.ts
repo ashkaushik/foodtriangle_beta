@@ -33,7 +33,7 @@ export class RegisterComponent {
             updated: [Date.now(), <any>Validators.required],
 
             role: this._fb.group({
-                name: ['Application Support', <any>Validators.required,],
+                name: ['foodie', <any>Validators.required,],
                 invitedBy: ['self']
             })
         });
