@@ -1,0 +1,137 @@
+<!--<div class="col-md-6 col-md-offset-3">
+    <h2>Add Menu</h2>
+    <form [formGroup]="myForm" novalidate (ngSubmit)="add(Form.value, Form.valid)">
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !longDesc.valid }">
+            <label for="name">Item Name</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" required />
+            <div *ngIf="f.submitted && !name.valid" class="help-block">First Name is required</div>
+        </div>
+        <div class="form-group">
+            <label for="fullprice">Full Price</label>
+            <input type="text" class="form-control" formControlName="fullprice" [(ngModel)]="model.fullprice" #fullprice="ngModel" required />
+            <div *ngIf="f.submitted && !fullprice.valid" class="help-block">Full Price is required</div>
+        </div>
+        <div ngModelGroup="rating">
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !longDesc.valid }">
+            <label for="fullprice">rating</label>
+            <input type="text" class="form-control" name="rating" [(ngModel)]="model.rating.userName" #userName="ngModel" required />
+            <div *ngIf="f.submitted" class="help-block">rating is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !longDesc.valid }">
+            <label for="fullprice">rating</label>
+            <input type="text" class="form-control" name="rating" [(ngModel)]="model.rating.userEmail" #userEmail="ngModel" required />
+            <div *ngIf="f.submitted" class="help-block">rating is required</div>
+        </div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !longDesc.valid }">
+            <label for="halfprice">halfprice</label>
+            <input type="text" class="form-control" name="halfprice" [(ngModel)]="model.halfprice" #halfprice="ngModel" required />
+            <div *ngIf="f.submitted && !halfprice.valid" class="help-block">Half Price is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !longDesc.valid }">
+            <label for="longDesc">Long Desciption</label>
+            <input type="longDesc" class="form-control" name="longDesc" [(ngModel)]="model.longDesc" #longDesc="ngModel" required />
+            <div *ngIf="f.submitted && !longDesc.valid" class="help-block">Long Desciption is required</div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Add Item</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <a [routerLink]="['/dashboard']" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>-->
+
+<div class="container">
+    <h1>Add Item</h1>
+    <form [formGroup]="menuForm" novalidate (ngSubmit)="add(menuForm.value, menuForm.valid)">
+        <div class="form-group">
+            <label for="">Name*</label>
+            <input type="text" class="form-control" formControlName="name">            
+            <div *ngIf="!menuForm.controls.name.valid  && submitted" class="help-block">Name is required (minimum 3 characters).</div>
+        </div>
+        <div class="form-group">
+            <label for="">Restaurant ID*</label>
+            <input type="text" class="form-control" formControlName="restid">            
+            <div *ngIf="!menuForm.controls.restid.valid  && submitted" class="help-block">Restaurant ID is required.</div>
+        </div>
+        <div class="form-group">
+            <label for="">Price (Full)*</label>
+            <input type="text" class="form-control" formControlName="fullprice">            
+            <div *ngIf="!menuForm.controls.fullprice.valid  && submitted" class="help-block">Price (Full) is required.</div>
+        </div>
+        <div class="form-group">
+            <label for="">Price (Half)</label>
+            <input type="text" class="form-control" formControlName="halfprice">            
+        </div>
+        <div class="form-group">
+            <label for="">Long Description</label>
+            <textarea class="form-control" formControlName="longDesc"> </textarea>           
+        </div>
+        <div class="form-group">
+            <label for="">Short Description</label>
+            <textarea class="form-control" formControlName="shortDesc"> </textarea>             
+        </div>
+        <div class="form-group">
+            <label for="">Latitude *</label>
+            <input type="text" class="form-control" formControlName="lat">            
+            <div *ngIf="!menuForm.controls.lat.valid  && submitted" class="help-block">Latitude (Half) is required.</div>
+        </div>
+        <div class="form-group">
+            <label for="">Longitude*</label>
+            <input type="text" class="form-control" formControlName="long">            
+            <div *ngIf="!menuForm.controls.long.valid  && submitted" class="help-block">Longitude (Half) is required.</div>
+        </div>
+        <div class="form-group">
+            <label for="">Type (Veg/Non Veg)*</label>
+            <select class="form-control" formControlName="type"> 
+                <option value="Veg">Veg</option>
+                <option value="NonVeg">Non Veg</option>
+            </select>           
+            <div *ngIf="!menuForm.controls.type.valid  && submitted" class="help-block">Type is required.</div>
+        </div>
+        <div class="form-group">
+            <label for="">Category (Indian,Muglai..)*</label>
+            <input type="text" class="form-control" formControlName="category">   
+            <div *ngIf="!menuForm.controls.category.valid  && submitted" class="help-block">Category is required.</div>
+        </div>
+        <div class="form-group">
+            <input type="hidden" class="form-control" formControlName="created">   
+            <div *ngIf="!menuForm.controls.created.valid  && submitted" class="help-block">Created is required.</div>
+        </div>
+        <div class="form-group">
+            <input type="hidden" class="form-control" formControlName="updated">   
+            <div *ngIf="!menuForm.controls.updated.valid  && submitted" class="help-block">Updated is required.</div>
+        </div>
+
+        <!--<div class="form-group" formGroupName="address">
+            <label for="">Address</label>
+            <input type="text" class="form-control" formControlName="email">
+            <div *ngIf="!menuForm.controls.address.controls.email.valid && submitted"
+                class="text-danger help-block">
+              Street required
+            </div>
+        </div>
+        <div class="form-group" formGroupName="address">
+            <label for="">Postcode</label>
+            <input type="text" class="form-control" formControlName="postcode">
+        </div>-->
+        <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Add Item</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+            />
+            <a [routerLink]="['/dashboard']" class="btn btn-link">Cancel</a>
+        </div>
+        <!--<div class="margin-20">
+      <div>menuForm details:-</div>
+      <pre>Is menuForm valid?: <br>{{menuForm.valid | json}}</pre>
+      <pre>Is menuForm submitted?: <br>{{submitted | json}}</pre>
+      <pre>menuForm value: <br>{{menuForm.value | json}}</pre>
+    </div>
+    <div class="margin-20">
+      Form changes:
+    </div>
+    <div *ngFor="let event of events" class="margin-20">
+      <pre> {{ event | json }} </pre>
+    </div>-->
+    </form>
+</div>

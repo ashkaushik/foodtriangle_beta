@@ -4,9 +4,9 @@ const ip = require('ip');
 
 exports.HOST = ip.address();
 exports.DEV_PORT = 8080;
-exports.E2E_PORT = 4201;
+exports.E2E_PORT = 8080;
 exports.PROD_PORT = 8080;
-exports.UNIVERSAL_PORT = 8000;
+exports.UNIVERSAL_PORT = 8080;
 
 /**
  * These constants set whether or not you will use proxy for Webpack DevServer
@@ -15,7 +15,7 @@ exports.UNIVERSAL_PORT = 8000;
  */
 exports.USE_DEV_SERVER_PROXY = false;
 exports.DEV_SERVER_PROXY_CONFIG = {
-    '**': 'http://localhost:8080'
+  '**': 'http://localhost:8080'
 }
 
 /**
@@ -33,9 +33,9 @@ exports.PROD_SOURCE_MAPS = 'source-map';
  * https://github.com/webpack/docs/wiki/webpack-dev-middleware#watchoptionsaggregatetimeout
  */
 exports.DEV_SERVER_WATCH_OPTIONS = {
-    poll: undefined,
-    aggregateTimeout: 300,
-    ignored: /node_modules/
+  poll: undefined,
+  aggregateTimeout: 300,
+  ignored: /node_modules/
 }
 
 /**
@@ -45,53 +45,53 @@ exports.DEV_SERVER_WATCH_OPTIONS = {
 exports.STORE_DEV_TOOLS = 'monitor'
 
 exports.EXCLUDE_SOURCE_MAPS = [
-    // these packages have problems with their sourcemaps
-    root('node_modules/@angular'),
-    root('node_modules/rxjs')
+  // these packages have problems with their sourcemaps
+  root('node_modules/@angular'),
+  root('node_modules/rxjs')
 ]
 
 exports.MY_COPY_FOLDERS = [
-    // use this for folders you want to be copied in to Client dist
-    // src/assets and index.html are already copied by default.
-    // format is { from: 'folder_name', to: 'folder_name' }
+  // use this for folders you want to be copied in to Client dist
+  // src/assets and index.html are already copied by default.
+  // format is { from: 'folder_name', to: 'folder_name' }
 ]
 
 exports.MY_POLYFILL_DLLS = [
-    // list polyfills that you want to be included in your dlls files
-    // this will speed up initial dev server build and incremental builds.
-    // Be sure to run `npm run build:dll` if you make changes to this array.
+  // list polyfills that you want to be included in your dlls files
+  // this will speed up initial dev server build and incremental builds.
+  // Be sure to run `npm run build:dll` if you make changes to this array.
 ]
 
 exports.MY_VENDOR_DLLS = [
-    // list vendors that you want to be included in your dlls files
-    // this will speed up initial dev server build and incremental builds.
-    // Be sure to run `npm run build:dll` if you make changes to this array.
+  // list vendors that you want to be included in your dlls files
+  // this will speed up initial dev server build and incremental builds.
+  // Be sure to run `npm run build:dll` if you make changes to this array.
 ]
 
 exports.MY_CLIENT_PLUGINS = [
-    // use this to import your own webpack config Client plugins.
+  // use this to import your own webpack config Client plugins.
 ]
 
 exports.MY_CLIENT_PRODUCTION_PLUGINS = [
-    // use this to import your own webpack config plugins for production use.
+  // use this to import your own webpack config plugins for production use.
 ]
 
 exports.MY_CLIENT_RULES = [
-    // use this to import your own rules for Client webpack config.
+  // use this to import your own rules for Client webpack config.
 ]
 
 exports.MY_SERVER_RULES = [
-    // use this to import your own rules for Universal Server webpack config.
+  // use this to import your own rules for Universal Server webpack config.
 ]
 
 exports.MY_TEST_RULES = [
-    // use this to import your own rules for Test webpack config.
+  // use this to import your own rules for Test webpack config.
 ]
 
 exports.MY_TEST_PLUGINS = [
-    // use this to import your own Test webpack config plugins.
+  // use this to import your own Test webpack config plugins.
 ]
 
 exports.MY_SERVER_INCLUDE_CLIENT_PACKAGES = [
-    // include these client packages so we can transform their source with webpack loaders
+  // include these client packages so we can transform their source with webpack loaders
 ]

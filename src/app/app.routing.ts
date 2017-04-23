@@ -1,12 +1,20 @@
-/* tslint:disable: max-line-length */
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent } from './features/dashboard.component';
-import { NotFound404Component } from './not-found404.component';
+// import { HomeComponent, LoginComponent, RegisterComponent, DashboardComponent } from './components/index';
 
-export const routes: Routes = [
-  { path: '', component: DashboardComponent, pathMatch: 'full' },
-  { path: 'lazy', loadChildren: './features/lazy/index#LazyModule' },
-  { path: 'sync', loadChildren: './features/sync/index#SyncModule?sync=true' },
-  { path: '**', component: NotFound404Component }
+import { HomeComponent, LoginComponent, RegisterComponent, SearchComponent, DashComponent, MenuComponent} from './components/index';
+import { AuthGuard } from './guards/index';
+
+const appRoutes: Routes = [
+    { path: '', component: HomeComponent},
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'search', component: SearchComponent },
+    { path: 'dashboard', component: DashComponent ,canActivate: [AuthGuard]},
+    { path: 'additem', component: MenuComponent ,canActivate: [AuthGuard]},
+
+    // otherwise redirect to home
+    { path: '**', redirectTo: '' }
 ];
+
+export const routing = RouterModule.forRoot(appRoutes);

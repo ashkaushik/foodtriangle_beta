@@ -1,11 +1,11 @@
 {
-  "name": "foodtriangle",
-  "version": "1.0.0",
-  "description": "Foodtriangle a food search engine",
-  "author": "Aashish Kaushik / Tushar Arora / Aastha Jain",
+  "name": "angular-webpack2-starter",
+  "version": "1.15.0",
+  "description": "Angular and Webpack 2 Starter",
+  "author": "Qdouble <qdouble@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ashkaushik0007/foodtriangle_beta.git"
+    "url": "git+https://github.com/qdouble/angular-webpack2-starter.git"
   },
   "scripts": {
     "postinstall": "npm run sass && npm run build:dll",
@@ -13,8 +13,8 @@
     "webdev": "webpack-dev-server",
     "webdev:hmr": "npm run webdev -- --inline --hot",
     "webpack": "webpack",
-    "ngc": "ngc -p tsconfig.aot.json",
-    "ngc:universal": "ngc -p tsconfig.aot.universal.json",
+    "ngc": "./node_modules/.bin/ngc -p tsconfig.aot.json",
+    "ngc:universal": "./node_modules/.bin/ngc -p tsconfig.aot.universal.json",
     "webdriver-manager": "webdriver-manager",
     "webdriver:update": "npm run webdriver-manager update",
     "webdriver:start": "npm run webdriver-manager start",
@@ -189,8 +189,7 @@
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ashkaushik0007/foodtriangle_beta/issues"
+    "url": "https://github.com/qdouble/angular-webpack2-starter/issues"
   },
-  "homepage": "https://github.com/ashkaushik0007/foodtriangle_beta#readme",
-  "main": "constants.js"
+  "homepage": "https://github.com/qdouble/angular-webpack2-starter#readme"
 }

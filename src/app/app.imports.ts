@@ -10,9 +10,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { useLogMonitor } from '@ngrx/store-log-monitor';
 
 import { routes } from './app.routing';
-import { rootReducer } from './reducers';
-import { StoreDevToolsModule } from './features/store-devtools.module';
-import { UserEffects } from './user/user.effects';
 
 const STORE_DEV_TOOLS_IMPORTS = [];
 if (ENV === 'development' && !AOT &&

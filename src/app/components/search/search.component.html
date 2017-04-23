@@ -1,0 +1,83 @@
+<section class="hero-ban">
+    <div class="container">
+        <div class="row">
+            <div class="nav-left col-xs-2 col-sm-2">
+                <a [routerLink]="['/']">
+                    <img class="logo" src="../../../assets/img/logo_white.png" alt="Foodtraingle">
+                </a>
+            </div>
+
+            <nav class="nav">
+                <div class="btn-group pull-right mar-top" *ngIf="!currentUser">
+                    <a [routerLink]="['/login']" class="btn btn-primary">Login</a>
+                    <a [routerLink]="['/register']" class="btn btn-primary">Sign Up</a>
+                </div>
+            </nav>
+            <nav class="nav">
+                <div class="btn-group pull-right mar-top" *ngIf="currentUser">
+                    <button type="button" class="btn btn-primary">{{currentUser.firstName}}!</button>
+                    <a [routerLink]="['/login']" class="btn btn-primary">Logout</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+            <h1 class="title">
+                Lorem Ipsum has been the<br> text ever since the 1500s<br> printer took a galley
+            </h1>
+        </div>
+
+        <nav>
+            <ul class="nav nav-pills srch-menu">
+                <li class="">
+                    <a class="nav-link " href="#">Order Online <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="">
+                    <a class="nav-link active" href="#">Find Receipe</a>
+                </li>
+                <li class="">
+                    <a class="nav-link " href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+<section class="inner_content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                <div *ngFor="let item of items">
+                    <div class="card fl">
+                        <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" src="../../../assets/img/pro1.jpg" data-holder-rendered="true">
+                        <div class="card-img-trans">
+                            <div class="card-price-grn">
+                                Rs {{ item.fullprice }}
+                            </div>
+                        </div>
+                        <div class="icon-row">
+                            <div class="icon-heart">
+                                <i class="fa fa-heart" aria-hidden="true"></i>
+                            </div>
+                            <div class="icon-cart">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            </div>
+                            <div class="icon-more">
+                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="card-block">
+                            <h4 class="card-title"> {{ item.name }} </h4>
+                            <p class="card-text">Cottage cheese cooked in thick makhani gravy with Indian spices</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 srch-right">
+                Right Hand side
+            </div>
+        </div>
+    </div>
+</section>
