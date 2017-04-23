@@ -9,8 +9,13 @@ import { AppConfig } from '../app.config';
 export class AuthenticationService {
     constructor(private http: Http, private config: AppConfig) { }
  
+<<<<<<< HEAD
     login(username: string, password: string) {
         return this.http.post(this.config.apiUrl + '/users/authenticate', { username: username, password: password })
+=======
+    login(email: string, password: string) {
+        return this.http.post(this.config.apiUrl + '/users/authenticate', { email: email, password: password })
+>>>>>>> origin/foodtriangle_node
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let user = response.json();

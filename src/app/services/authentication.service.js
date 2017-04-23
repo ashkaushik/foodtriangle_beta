@@ -18,8 +18,13 @@ var AuthenticationService = (function () {
         this.http = http;
         this.config = config;
     }
+<<<<<<< HEAD
     AuthenticationService.prototype.login = function (username, password) {
         return this.http.post(this.config.apiUrl + '/users/authenticate', { username: username, password: password })
+=======
+    AuthenticationService.prototype.login = function (email, password) {
+        return this.http.post(this.config.apiUrl + '/users/authenticate', { email: email, password: password })
+>>>>>>> origin/foodtriangle_node
             .map(function (response) {
             // login successful if there's a jwt token in the response
             var user = response.json();

@@ -20,6 +20,11 @@ var index_1 = require("./directives/index");
 var index_2 = require("./guards/index");
 var index_3 = require("./services/index");
 var index_4 = require("./components/index");
+<<<<<<< HEAD
+=======
+var core_2 = require("@angular/core");
+core_2.enableProdMode();
+>>>>>>> origin/foodtriangle_node
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,19 +32,35 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
+<<<<<<< HEAD
         imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, app_routing_1.routing, common_2.CommonModule],
+=======
+        imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, app_routing_1.routing, common_2.CommonModule],
+>>>>>>> origin/foodtriangle_node
         declarations: [app_component_1.AppComponent,
             tasks_component_1.TasksComponent,
             index_1.AlertComponent,
             index_4.HomeComponent,
             index_4.LoginComponent,
+<<<<<<< HEAD
             index_4.RegisterComponent
+=======
+            index_4.RegisterComponent,
+            index_4.SearchComponent,
+            index_4.DashComponent,
+            index_4.MenuComponent
+>>>>>>> origin/foodtriangle_node
         ],
         providers: [
             index_2.AuthGuard,
             index_3.AlertService,
             index_3.AuthenticationService,
             index_3.UserService,
+<<<<<<< HEAD
+=======
+            index_3.TaskService,
+            index_3.MenuService,
+>>>>>>> origin/foodtriangle_node
             app_config_1.AppConfig,
             { provide: common_1.APP_BASE_HREF, useValue: '/' }
         ],

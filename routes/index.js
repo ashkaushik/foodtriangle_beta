@@ -6,4 +6,8 @@ router.get('/',function(req, res, next){
     res.render('index.html');
 });
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> origin/foodtriangle_node

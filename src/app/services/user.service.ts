@@ -9,7 +9,11 @@ export class UserService {
     constructor(private http: Http, private config: AppConfig) { }
  
     getAll() {
+<<<<<<< HEAD
         return this.http.get(this.config.apiUrl + '/users', this.jwt()).map((response: Response) => response.json());
+=======
+        return this.http.get(this.config.apiUrl + '/users/getAllUsers', this.jwt()).map((response: Response) => response.json());
+>>>>>>> origin/foodtriangle_node
     }
  
     getById(_id: string) {

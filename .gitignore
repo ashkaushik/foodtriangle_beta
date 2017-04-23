@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 /config.json
 /src/app/app.config.ts
 /server.js
+=======
+/src/app/app.config.ts
+>>>>>>> origin/foodtriangle_node

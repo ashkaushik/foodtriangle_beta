@@ -6,7 +6,11 @@ var userService = require('services/user.service');
 // routes
 router.post('/authenticate', authenticate);
 router.post('/register', register);
+<<<<<<< HEAD
 router.get('/', getAll);
+=======
+router.get('/getAllUsers', getAll);
+>>>>>>> origin/foodtriangle_node
 router.get('/current', getCurrent);
 router.put('/:_id', update);
 router.delete('/:_id', _delete);
@@ -14,14 +18,22 @@ router.delete('/:_id', _delete);
 module.exports = router;
  
 function authenticate(req, res) {
+<<<<<<< HEAD
     userService.authenticate(req.body.username, req.body.password)
+=======
+    userService.authenticate(req.body.email, req.body.password)
+>>>>>>> origin/foodtriangle_node
         .then(function (user) {
             if (user) {
                 // authentication successful
                 res.send(user);
             } else {
                 // authentication failed
+<<<<<<< HEAD
                 res.status(401).send('Username or password is incorrect');
+=======
+                res.status(401).send('email or password is incorrect');
+>>>>>>> origin/foodtriangle_node
             }
         })
         .catch(function (err) {

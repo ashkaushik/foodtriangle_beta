@@ -18,19 +18,33 @@ service.delete = _delete;
  
 module.exports = service;
  
+<<<<<<< HEAD
 function authenticate(username, password) {
     var deferred = Q.defer();
  
     db.users.findOne({ username: username }, function (err, user) {
+=======
+function authenticate(email, password) {
+    var deferred = Q.defer();
+ 
+    db.users.findOne({ email: email }, function (err, user) {
+>>>>>>> origin/foodtriangle_node
         if (err) deferred.reject(err.name + ': ' + err.message);
  
         if (user && bcrypt.compareSync(password, user.hash)) {
             // authentication successful
             deferred.resolve({
                 _id: user._id,
+<<<<<<< HEAD
                 username: user.username,
                 firstName: user.firstName,
                 lastName: user.lastName,
+=======
+                email: user.email,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                role: user.role.name,
+>>>>>>> origin/foodtriangle_node
                 token: jwt.sign({ sub: user._id }, config.secret)
             });
         } else {
@@ -82,13 +96,22 @@ function create(userParam) {
  
     // validation
     db.users.findOne(
+<<<<<<< HEAD
         { username: userParam.username },
+=======
+        { email: userParam.email },
+>>>>>>> origin/foodtriangle_node
         function (err, user) {
             if (err) deferred.reject(err.name + ': ' + err.message);
  
             if (user) {
+<<<<<<< HEAD
                 // username already exists
                 deferred.reject('Username "' + userParam.username + '" is already taken');
+=======
+                // email already exists
+                deferred.reject('Email "' + userParam.email + '" is already taken');
+>>>>>>> origin/foodtriangle_node
             } else {
                 createUser();
             }
@@ -120,16 +143,28 @@ function update(_id, userParam) {
     db.users.findById(_id, function (err, user) {
         if (err) deferred.reject(err.name + ': ' + err.message);
  
+<<<<<<< HEAD
         if (user.username !== userParam.username) {
             // username has changed so check if the new username is already taken
             db.users.findOne(
                 { username: userParam.username },
+=======
+        if (user.email !== userParam.email) {
+            // email has changed so check if the new email is already taken
+            db.users.findOne(
+                { email: userParam.email },
+>>>>>>> origin/foodtriangle_node
                 function (err, user) {
                     if (err) deferred.reject(err.name + ': ' + err.message);
  
                     if (user) {
+<<<<<<< HEAD
                         // username already exists
                         deferred.reject('Username "' + req.body.username + '" is already taken')
+=======
+                        // email already exists
+                        deferred.reject('Email "' + req.body.email + '" is already taken')
+>>>>>>> origin/foodtriangle_node
                     } else {
                         updateUser();
                     }
@@ -144,7 +179,11 @@ function update(_id, userParam) {
         var set = {
             firstName: userParam.firstName,
             lastName: userParam.lastName,
+<<<<<<< HEAD
             username: userParam.username,
+=======
+            email: userParam.email,
+>>>>>>> origin/foodtriangle_node
         };
  
         // update password if it was entered

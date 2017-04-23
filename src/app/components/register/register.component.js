@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+<<<<<<< HEAD
 var index_1 = require("../../services/index");
 var RegisterComponent = (function () {
     function RegisterComponent(router, userService, alertService) {
@@ -32,6 +33,50 @@ var RegisterComponent = (function () {
             _this.loading = false;
         });
     };
+=======
+var forms_1 = require("@angular/forms");
+var index_1 = require("../../services/index");
+var RegisterComponent = (function () {
+    function RegisterComponent(_fb, router, userService, alertService) {
+        this._fb = _fb;
+        this.router = router;
+        this.userService = userService;
+        this.alertService = alertService;
+        this.events = []; // use later to display form changes
+        this.loading = false;
+        this.model = {};
+    }
+    RegisterComponent.prototype.ngOnInit = function () {
+        this.regForm = this._fb.group({
+            firstName: ['', [forms_1.Validators.required, forms_1.Validators.minLength(3)]],
+            lastName: ['', [forms_1.Validators.required, forms_1.Validators.minLength(3)]],
+            email: ['', forms_1.Validators.required],
+            password: ['', [forms_1.Validators.required, forms_1.Validators.minLength(8)]],
+            phone: ['', [forms_1.Validators.required, forms_1.Validators.minLength(10)]],
+            created: [Date.now(), forms_1.Validators.required],
+            updated: [Date.now(), forms_1.Validators.required],
+            role: this._fb.group({
+                name: ['Application Support', forms_1.Validators.required,],
+                invitedBy: ['self']
+            })
+        });
+    };
+    RegisterComponent.prototype.register = function (model, isValid) {
+        var _this = this;
+        this.submitted = true;
+        if (isValid) {
+            this.loading = true;
+            this.userService.create(model)
+                .subscribe(function (data) {
+                _this.alertService.success('Registration successful', true);
+                _this.router.navigate(['/login']);
+            }, function (error) {
+                _this.alertService.error(error._body);
+                _this.loading = false;
+            });
+        }
+    };
+>>>>>>> origin/foodtriangle_node
     return RegisterComponent;
 }());
 RegisterComponent = __decorate([
@@ -39,7 +84,12 @@ RegisterComponent = __decorate([
         moduleId: module.id,
         templateUrl: 'register.component.html'
     }),
+<<<<<<< HEAD
     __metadata("design:paramtypes", [router_1.Router,
+=======
+    __metadata("design:paramtypes", [forms_1.FormBuilder,
+        router_1.Router,
+>>>>>>> origin/foodtriangle_node
         index_1.UserService,
         index_1.AlertService])
 ], RegisterComponent);

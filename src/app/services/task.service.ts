@@ -1,6 +1,9 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
+<<<<<<< HEAD
 import { Observable } from 'rxjs/Observable';
+=======
+>>>>>>> origin/foodtriangle_node
 import 'rxjs/add/operator/map';
 
 @Injectable()

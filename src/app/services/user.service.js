@@ -18,7 +18,11 @@ var UserService = (function () {
         this.config = config;
     }
     UserService.prototype.getAll = function () {
+<<<<<<< HEAD
         return this.http.get(this.config.apiUrl + '/users', this.jwt()).map(function (response) { return response.json(); });
+=======
+        return this.http.get(this.config.apiUrl + '/users/getAllUsers', this.jwt()).map(function (response) { return response.json(); });
+>>>>>>> origin/foodtriangle_node
     };
     UserService.prototype.getById = function (_id) {
         return this.http.get(this.config.apiUrl + '/users/' + _id, this.jwt()).map(function (response) { return response.json(); });

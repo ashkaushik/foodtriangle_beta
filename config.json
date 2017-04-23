@@ -1,5 +1,9 @@
 {
     "connectionString": "mongodb://foodtriangle_ashkaushik:ft_ashkaushik007@104.154.215.211:80/foodtriangle_v1",
+<<<<<<< HEAD
     "apiUrl": "http://localhost:8080",
+=======
+    "apiUrl": "http://104.154.215.211:8080/",
+>>>>>>> origin/foodtriangle_node
     "secret": "Aashish_kaushik"
 }
