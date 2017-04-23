@@ -11,6 +11,7 @@ import { UserService } from '../../services/index';
 
 export class HomeComponent implements OnInit {
     currentUser: User;
+    role: string;
     users: User[] = [];
 
     constructor(
@@ -19,10 +20,15 @@ export class HomeComponent implements OnInit {
         private router: Router,
     ) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-      }
+    }
 
     ngOnInit() {
         this.loadAllUsers();
+        if (this.currentUser) {
+            if (this.currentUser.role == "Application Support" || this.currentUser.role == "Customer Service" || this.currentUser.role == "Customer Desk" || this.currentUser.role == "kitchen chief") {
+                this.router.navigate(['/dashboard']);
+            }
+        }
     }
 
     deleteUser(_id: string) {

@@ -22,8 +22,10 @@ var HomeComponent = (function () {
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.loadAllUsers();
-        if (this.currentUser.role == "Application Support" || this.currentUser.role == "Customer Service" || this.currentUser.role == "Customer Desk" || this.currentUser.role == "kitchen chief") {
-            this.router.navigate(['/dashboard']);
+        if (this.currentUser) {
+            if (this.currentUser.role == "Application Support" || this.currentUser.role == "Customer Service" || this.currentUser.role == "Customer Desk" || this.currentUser.role == "kitchen chief") {
+                this.router.navigate(['/dashboard']);
+            }
         }
     };
     HomeComponent.prototype.deleteUser = function (_id) {
