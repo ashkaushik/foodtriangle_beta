@@ -1,5 +1,5 @@
 {
-    "connectionString": "mongodb://foodtriangle_ashkaushik:ft_ashkaushik007@104.154.215.211:80/foodtriangle_v1",
-    "apiUrl": "http://104.154.215.211:8080/",
+    "connectionString": "mongodb://foodtriangle_ashkaushik:ft_ashkaushik007@104.154.152.55:80/foodtriangle_v1",
+    "apiUrl": "http://104.154.152.55:8080",
     "secret": "Aashish_kaushik"
 }

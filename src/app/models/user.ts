@@ -5,8 +5,9 @@ export interface User {
     firstName: string;
     lastName: string;
     userName: String;
-    emailVerified:boolean;
-    phoneVerified:boolean;
+    IsemailVerified:boolean;
+    IsphoneVerified:boolean;
+    otp:string;
     role?: { 
             name?:String;
             invitedBy?:string;
@@ -23,7 +24,7 @@ export interface User {
             category?:string;    
           }
     defaultaddress:boolean;
-    active:boolean;
+    Isactive:boolean;
     phone: number;
     created: Date;
     updated: Date;

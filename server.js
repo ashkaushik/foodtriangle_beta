@@ -28,7 +28,8 @@ app.engine('html', require('ejs').renderFile);
   var index = require('./routes/index'),
       tasks = require('./routes/tasks'),
       user  = require('./routes/user.js'),
-      menu  = require('./routes/menu.js');
+      menu  = require('./routes/menu.js'),
+      sms  = require('./routes/sms.js');
 
 // Body Parser MW
 app.use(cors());
@@ -40,6 +41,7 @@ app.use('/', index);
 app.use('/api', tasks);
 app.use('/users', user);
 app.use('/menus', menu);
+app.use('/sms', sms);
 
 app.use(compression());
 app.use(express.static('dist/client'));

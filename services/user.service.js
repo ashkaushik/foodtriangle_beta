@@ -165,6 +165,58 @@ function update(_id, userParam) {
  
     return deferred.promise;
 }
+
+function update(_id, userParam) {
+    var deferred = Q.defer();
+ 
+    // validation
+    db.users.findById(_id, function (err, user) {
+        if (err) deferred.reject(err.name + ': ' + err.message);
+ 
+        if (user.email !== userParam.email) {
+            // email has changed so check if the new email is already taken
+            db.users.findOne(
+                { email: userParam.email },
+                function (err, user) {
+                    if (err) deferred.reject(err.name + ': ' + err.message);
+ 
+                    if (user) {
+                        // email already exists
+                        deferred.reject('Email "' + req.body.email + '" is already taken')
+                    } else {
+                        updateUser();
+                    }
+                });
+        } else {
+            updateUser();
+        }
+    });
+ 
+    function updateUser() {
+        // fields to update
+        var set = {
+            firstName: userParam.firstName,
+            lastName: userParam.lastName,
+            email: userParam.email,
+        };
+ 
+        // update password if it was entered
+        if (userParam.password) {
+            set.hash = bcrypt.hashSync(userParam.password, 10);
+        }
+ 
+        db.users.update(
+            { _id: mongo.helper.toObjectID(_id) },
+            { $set: set },
+            function (err, doc) {
+                if (err) deferred.reject(err.name + ': ' + err.message);
+ 
+                deferred.resolve();
+            });
+    }
+ 
+    return deferred.promise;
+}
  
 function _delete(_id) {
     var deferred = Q.defer();
