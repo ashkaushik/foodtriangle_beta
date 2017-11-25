@@ -66,3 +66,10 @@ npm run webdriver:start
 # in another terminal
 npm run e2e:live
 
+
+db.createUser( { user: "ashkaushik",
+                 pwd: "Ashk@0007",
+                 roles: [ { role: "clusterAdmin", db: "admin" },
+                          { role: "readAnyDatabase", db: "admin" },
+                          "readWrite"] },
+               { w: "majority" , wtimeout: 5000 } )
